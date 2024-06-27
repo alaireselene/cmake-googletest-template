@@ -32,13 +32,13 @@ target_include_directories(TemplateTest PUBLIC include)
 
 # Build app executable
 file(GLOB_RECURSE APP_SOURCES app/*.cpp)
-add_executable(TemplateApp app/app_bigint.cpp)
+add_executable(TemplateApp ${APP_SOURCES})
 target_link_libraries(TemplateApp TemplateLibrary)
 target_include_directories(TemplateApp PUBLIC include)
 target_compile_features(TemplateApp PUBLIC cxx_std_17)
 
 include(GoogleTest)
-gtest_discover_tests(test_bigInt)
+gtest_discover_tests(TemplateTest)
 
 
 
